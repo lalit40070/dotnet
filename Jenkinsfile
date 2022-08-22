@@ -6,12 +6,7 @@ pipeline {
         githubPush()
       }
     
-    stage('approval') {
-             steps { 
-               input "Deploy to staging?"
-          }
-        } 
-    
+   
     stages {
         stage('Restore packages'){
            steps{
