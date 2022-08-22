@@ -4,6 +4,7 @@ pipeline {
         stage('Restore packages'){
            steps{
                sh 'dotnet restore WebApplication.sln'
+               sh 'echo lalit'
             }
          }        
         stage('Clean'){
