@@ -3,6 +3,13 @@ pipeline {
      triggers {
         githubPush()
       }
+    
+    stage('approval') {
+             steps { 
+               input "Deploy to Dev?"
+          }
+        } 
+    
     stages {
         stage('Restore packages'){
            steps{
