@@ -2,9 +2,6 @@ pipeline {
     agent {
     label 'dev'
     }
-     triggers {
-        githubPush()
-      }
     stages {
         stage('Restore packages'){
            steps{
