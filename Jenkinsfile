@@ -3,17 +3,16 @@ pipeline {
     label 'dev'
     }
     stages {
+        stage('approval') {
+             steps { 
+               input "Deploy to QA?"
+          }
+        } 
         stage('Restore packages'){
            steps{
                sh 'dotnet restore WebApplication.sln'
             }
          }        
-      stage('approval') {
-             steps { 
-               input "Deploy to QA?"
-          }
-        } 
-        
         stage('Clean'){
            steps{
                sh 'dotnet clean WebApplication.sln --configuration Release'
