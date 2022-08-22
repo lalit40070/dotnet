@@ -8,7 +8,7 @@ pipeline {
     
     stage('approval') {
              steps { 
-               input "Deploy to Dev?"
+               input "Deploy to staging?"
           }
         } 
     
