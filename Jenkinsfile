@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-      label 'staging' 
-    }
+    agent any
     stages {
         stage('Restore packages'){
            steps{
