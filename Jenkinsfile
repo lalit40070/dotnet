@@ -8,6 +8,12 @@ pipeline {
                sh 'dotnet restore WebApplication.sln'
             }
          }        
+      stage('approval') {
+             steps { 
+               input "Deploy to QA?"
+          }
+        } 
+        
         stage('Clean'){
            steps{
                sh 'dotnet clean WebApplication.sln --configuration Release'
