@@ -1,9 +1,12 @@
 pipeline {
-    agent any
+    agent {
+    label 'staging'
+    }
     stages {
         stage('Restore packages'){
            steps{
                sh 'dotnet restore WebApplication.sln'
+               sh 'echo "lalit" '
             }
          }        
         stage('Clean'){
